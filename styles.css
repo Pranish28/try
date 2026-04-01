@@ -341,6 +341,7 @@ nav .container {
 
 .service-bg-sunday,
 .service-bg-bible,
+.service-bg-community,
 .service-bg-children,
 .service-bg-youth,
 .service-bg-baptism {
@@ -351,6 +352,7 @@ nav .container {
 
 .service-bg-sunday::before,
 .service-bg-bible::before,
+.service-bg-community::before,
 .service-bg-children::before,
 .service-bg-youth::before,
 .service-bg-baptism::before {
@@ -363,17 +365,20 @@ nav .container {
 
 .service-bg-sunday { background-image: url("saturdayworship.jpg"); }
 .service-bg-bible { background-image: url("bible study.jpg"); }
+.service-bg-community { background-image: url("communityreachout.jpg"); }
 .service-bg-children { background-image: url("children.jpg"); }
 .service-bg-youth { background-image: url("youth.webp"); }
 .service-bg-baptism { background-image: url("Baptism.webp"); }
 
 .service-bg-sunday h3,
 .service-bg-bible h3,
+.service-bg-community h3,
 .service-bg-children h3,
 .service-bg-youth h3,
 .service-bg-baptism h3,
 .service-bg-sunday p,
 .service-bg-bible p,
+.service-bg-community p,
 .service-bg-children p,
 .service-bg-youth p,
 .service-bg-baptism p {
@@ -382,6 +387,7 @@ nav .container {
 
 .service-bg-sunday i,
 .service-bg-bible i,
+.service-bg-community i,
 .service-bg-children i,
 .service-bg-youth i,
 .service-bg-baptism i {
