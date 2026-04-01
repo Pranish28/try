@@ -308,6 +308,8 @@ nav .container {
 }
 
 .service-item {
+    position: relative;
+    overflow: hidden;
     text-align: center;
     padding: 2rem;
     background: #f8f9fa;
@@ -330,6 +332,77 @@ nav .container {
     font-size: 1.5rem;
     margin-bottom: 1rem;
     color: #2c3e50;
+}
+
+.service-item > * {
+    position: relative;
+    z-index: 1;
+}
+
+.service-bg-sunday,
+.service-bg-bible,
+.service-bg-children,
+.service-bg-youth,
+.service-bg-baptism {
+    color: #fff;
+    background-size: cover;
+    background-position: center;
+}
+
+.service-bg-sunday::before,
+.service-bg-bible::before,
+.service-bg-children::before,
+.service-bg-youth::before,
+.service-bg-baptism::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56));
+    z-index: 0;
+}
+
+.service-bg-sunday { background-image: url("IMG_2281.webp"); }
+.service-bg-bible { background-image: url("bible study.jpg"); }
+.service-bg-children { background-image: url("children.jpg"); }
+.service-bg-youth { background-image: url("youth.webp"); }
+.service-bg-baptism { background-image: url("Baptism.webp"); }
+
+.service-bg-sunday h3,
+.service-bg-bible h3,
+.service-bg-children h3,
+.service-bg-youth h3,
+.service-bg-baptism h3,
+.service-bg-sunday p,
+.service-bg-bible p,
+.service-bg-children p,
+.service-bg-youth p,
+.service-bg-baptism p {
+    color: #fff;
+}
+
+.service-bg-sunday i,
+.service-bg-bible i,
+.service-bg-children i,
+.service-bg-youth i,
+.service-bg-baptism i {
+    color: #ffffff;
+}
+
+.service-btn {
+    display: inline-block;
+    margin-top: 0.7rem;
+    padding: 10px 16px;
+    border-radius: 999px;
+    text-decoration: none;
+    color: #fff;
+    background: #3498db;
+    font-weight: 600;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.service-btn:hover {
+    background: #2980b9;
+    transform: translateY(-1px);
 }
 
 /* Contact Section */
