@@ -30,7 +30,7 @@
 
 /* Specific styling for the image */
 .logo-img {
-    height: 120px; /* Adjust this height to fit your navbar */
+    height: 105px; /* Adjust this height to fit your navbar */
     width: auto;  /* Maintains aspect ratio */
     display: block;
     transition: transform 0.3s ease;
@@ -44,7 +44,7 @@
 /* Adjust for Mobile */
 @media (max-width: 768px) {
     .logo-img {
-        height: 40px; /* Slightly smaller on mobile */
+        height: 38px; /* Slightly larger on mobile */
     }
     .brand-text {
         font-size: 1rem;
@@ -56,6 +56,10 @@ body {
     line-height: 1.6;
     color: #333;
     overflow-x: hidden;
+}
+
+section {
+    scroll-margin-top: 140px;
 }
 
 /* Section borders (Home/About/Our Services) */
@@ -81,7 +85,8 @@ header {
     position: fixed;
     top: 0;
     width: 100%;
-    background: #fff;
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(10px);
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     z-index: 1000;
 }
@@ -90,6 +95,7 @@ header {
     background: #2c3e50;
     color: #fff;
     font-size: 0.92rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .top-info .container {
@@ -97,7 +103,7 @@ header {
     justify-content: center;
     align-items: center;
     gap: 1rem;
-    padding: 0.5rem 0;
+    padding: 0.35rem 0;
     position: relative;
 }
 
@@ -149,7 +155,7 @@ nav .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 0;
+    padding: 0.7rem 0;
 }
 
 .nav-links {
@@ -197,27 +203,43 @@ nav .container {
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') center/cover no-repeat;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('homepage.jpg') center/cover no-repeat;
     background-attachment: fixed;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     text-align: center;
     color: #fff;
+    padding-top: 115px; /* keeps hero content below the fixed header bars */
+}
+
+.hero h1 {
+    font-size: 1.15rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.95);
+    margin-bottom: 0.75rem;
 }
 
 .hero h2 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-    font-weight: 700;
+    font-size: 3.15rem;
+    margin-bottom: 1.15rem;
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    text-shadow: 0 8px 30px rgba(0, 0, 0, 0.45);
+    display: inline-block;
 }
 
 .hero p {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-    max-width: 600px;
+    font-size: 1.15rem;
+    margin-bottom: 2.25rem;
+    max-width: 650px;
     margin-left: auto;
     margin-right: auto;
+    color: rgba(255, 255, 255, 0.95);
+    text-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
 }
 
 .btn {
@@ -233,6 +255,18 @@ nav .container {
 
 .btn:hover {
     background: #2980b9;
+}
+
+.hero .btn {
+    padding: 14px 34px;
+    border-radius: 12px;
+    box-shadow: 0 16px 35px rgba(52, 152, 219, 0.28);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.hero .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 22px 55px rgba(52, 152, 219, 0.38);
 }
 
 /* About Section */
@@ -439,6 +473,7 @@ nav .container {
 }
 
 .contact-card {
+    display: block;
     text-align: center;
     padding: 2rem;
     background: #f8f9fa;
@@ -446,6 +481,17 @@ nav .container {
     box-shadow: 0 5px 15px rgba(0,0,0,0.08);
     border: 1px solid rgba(44, 62, 80, 0.10);
     transition: transform 0.3s;
+}
+
+.contact-card-link {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+.contact-card-link:focus-visible {
+    outline: 3px solid rgba(52, 152, 219, 0.55);
+    outline-offset: 3px;
 }
 
 .contact-card:hover {
@@ -621,8 +667,13 @@ footer {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    section {
+        scroll-margin-top: 190px;
+    }
+
     .hero {
         background-attachment: scroll;
+        padding-top: 150px;
     }
 
     .top-info .container {
@@ -679,11 +730,15 @@ footer {
     }
 
     .hero h2 {
-        font-size: 2rem;
+        font-size: 2.05rem;
     }
 
     .hero p {
         font-size: 1rem;
+    }
+
+    .hero h1 {
+        font-size: 0.95rem;
     }
 
     .about h2, .services h2 {
