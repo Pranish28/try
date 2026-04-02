@@ -79,3 +79,41 @@ document.querySelectorAll('.service-item, .about-item').forEach(item => {
     item.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
     observer.observe(item);
 });
+
+// Nepal phone validation (+977XXXXXXXXXX or 10-digit local)
+const contactForm = document.querySelector('.contact-form');
+const phoneInput = document.getElementById('phone');
+const phoneError = document.getElementById('phoneError');
+const nepalPhoneRegex = /^(?:\+977)?9\d{9}$/;
+
+if (contactForm && phoneInput && phoneError) {
+    const setPhoneValidationState = () => {
+        const value = phoneInput.value.trim();
+
+        if (!value) {
+            phoneInput.setCustomValidity('Please enter your phone number.');
+            phoneError.textContent = 'Please enter your phone number.';
+            return false;
+        }
+
+        if (!nepalPhoneRegex.test(value)) {
+            phoneInput.setCustomValidity('Invalid Nepal number. Use 9812345678 or +9779812345678.');
+            phoneError.textContent = 'Invalid number. Use 10 digits or +977 with 10-digit number.';
+            return false;
+        }
+
+        phoneInput.setCustomValidity('');
+        phoneError.textContent = '';
+        return true;
+    };
+
+    phoneInput.addEventListener('input', setPhoneValidationState);
+    phoneInput.addEventListener('blur', setPhoneValidationState);
+
+    contactForm.addEventListener('submit', (event) => {
+        if (!setPhoneValidationState()) {
+            event.preventDefault();
+            phoneInput.reportValidity();
+        }
+    });
+}
